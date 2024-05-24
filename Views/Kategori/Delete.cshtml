@@ -1,0 +1,40 @@
+﻿@model KurumsalWeb.Models.Kategori
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Sil</h2>
+
+<div>
+    <h4>Kategori</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.KategoriAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.KategoriAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Aciklama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Aciklama)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Sil" class="btn btn-outline-primary" /> |
+            @Html.ActionLink("Geri Dön", "Index")
+        </div>
+    }
+</div>
